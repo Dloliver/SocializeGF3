@@ -88,9 +88,22 @@ button:hover span:after {
   right: 0;
 }
 
+.logo {
+  height:100px;
+  border-radius: 50%;
+  padding-top: 10px;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 @media screen and (max-width: 768px){
   img {
-    height:25%;
+    height:10%;
   }
 
   .container {
@@ -98,11 +111,12 @@ button:hover span:after {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 50%;
   }
 
   .link {
     width: 80%;
-    height: 20em;
+    height: 25%;
   }
 
   p {
@@ -118,7 +132,6 @@ button:hover span:after {
     font-weight: bold;
     width: 400px;
   }
-
 
 }
 
