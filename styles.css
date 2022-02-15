@@ -22,19 +22,12 @@ body {
 }
 
 .link {
-  width: 46%;
   height: 150px;
   display:flex;
   justify-content: center;
   align-items: center;
   background-color: rgba(0,0,0, 0.3);
   margin: 5px;
-}
-
-.container{
-  display: flex;
-  flex-direction: row;
-  flex-flow: wrap
 }
 
 .summary {
@@ -95,7 +88,7 @@ button:hover span:after {
   right: 0;
 }
 
-@media only screen and (max-width:800px){
+@media only screen and (max-width: 850px){
   img {
     height:30em;
   }
@@ -109,5 +102,24 @@ button:hover span:after {
 
   .link {
     width: 80%;
+  }
+}
+
+
+
+@media only screen and (min-width: 851px){
+  img {
+      height: 15em;
+  }
+
+  .container{
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap
+  }
+
+  .link{
+    width: 49%;
+
   }
 }
