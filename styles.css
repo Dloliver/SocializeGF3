@@ -94,3 +94,20 @@ button:hover span:after {
   opacity: 1;
   right: 0;
 }
+
+@media only screen and (max-width:800px){
+  img {
+    height:30em;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .link {
+    width: 80%;
+  }
+}
