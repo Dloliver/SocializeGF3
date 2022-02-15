@@ -90,7 +90,7 @@ button:hover span:after {
 
 .logo {
   height:100px;
-  border-radius: 50%;
+  border-radius: 25%;
   padding-top: 10px;
 }
 
@@ -130,7 +130,8 @@ button:hover span:after {
   button {
     font-size: 35px;
     font-weight: bold;
-    width: 400px;
+    width: 80%;
+    height: 60%;
   }
 
 }
