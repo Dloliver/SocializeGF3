@@ -90,7 +90,7 @@ button:hover span:after {
 
 @media screen and (max-width: 768px){
   img {
-    height:30em;
+    height:25%;
   }
 
   .container {
