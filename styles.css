@@ -105,7 +105,7 @@ button:hover span:after {
 
 @media screen and (max-width: 1000px){
   img {
-    height:10%;
+    height:25em;
   }
 
   .container {
