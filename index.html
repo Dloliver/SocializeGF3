@@ -38,6 +38,57 @@
       <img src="Further.png" alt="Avatar">
     </div>
     <div class="summary">
-      <p>Test Site for Apollo Train
+      <p>Test Site for Apollo Training</p>
+    </div>
 
- 
+    <div class="container">
+      <!-- Social Media Buttons -->
+      <div class="link">
+        <button class="btn btn-success" data-url="https://www.instagram.com/">Instagram</button>
+      </div>
+      <div class="link">
+        <button class="btn btn-success" data-url="https://www.twitch.tv/">Twitch</button>
+      </div>
+      <div class="link">
+        <button class="btn btn-success" data-url="https://www.tiktok.com/">Tiktok</button>
+      </div>
+      <div class="link">
+        <button class="btn btn-success" data-url="https://www.youtube.com/">Youtube</button>
+      </div>
+    </div>
+
+    <div class="footer">
+      <img class="logo" src="Hittin'.png" alt="logo">
+    </div>
+
+    <script>
+      // Ensure the dataLayer exists
+      window.dataLayer = window.dataLayer || [];
+
+      // Add event listeners to all buttons with class "btn-success"
+      document.querySelectorAll(".btn-success").forEach(function (button) {
+        button.addEventListener("click", function () {
+          const linkUrl = button.getAttribute("data-url");
+
+          // Open the link in a new tab
+          window.open(linkUrl, '_blank');
+
+          // Push event data to the dataLayer
+          window.dataLayer.push({
+            detailed_event: "Social Media Clicks",
+            event: "social_media_click",
+            event_data: {
+              link_url: linkUrl
+            },
+            page_data: {
+              page_location: window.location.href
+            }
+          });
+
+          console.log(`Event tracked for ${linkUrl}`);
+        });
+      });
+    </script>
+  </body>
+</html>
+
