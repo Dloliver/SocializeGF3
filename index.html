@@ -1,33 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <script>
-      // Initialize the dataLayer
-      window.dataLayer = window.dataLayer || [];
-
-      // Push "Page Load Started" event
-      window.dataLayer.push({
-        "detailed_event": "Page Load Started",
-        "event": "page_load_start",
-        "page_data": {
-          "page_title": document.title,
-          "page_url": window.location.href
-        }
-      });
-      console.log("Page load start event tracked.");
-
-      // Attach a listener for "Page Load Completed"
-      function trackPageLoadCompleted() {
-        window.dataLayer.push({
-          "detailed_event": "Page Load Completed",
-          "event": "page_view",
-          "page_data": {
-            "page_title": document.title,
-            "page_url": window.location.href
-          }
-        });
-        console.log("Page load completed event tracked.");
-      }
+    
 
       if (document.readyState === 'complete') {
         trackPageLoadCompleted();
