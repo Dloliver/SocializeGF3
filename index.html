@@ -2,89 +2,42 @@
 <html lang="en" dir="ltr">
   <head>
     <script>
-    // Initialize the dataLayer
-    window.dataLayer = window.dataLayer || [];
-  </script>
+      // Initialize the dataLayer
+      window.dataLayer = window.dataLayer || [];
+    </script>
     <meta charset="utf-8">
-    <title></title>
-    <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-NC9DR9BQ');</script>
-<!-- End Google Tag Manager -->
-  </head>
-  <link rel="stylesheet" href="styles.css">
-  <div class="header">
+    <title>Test Site for Apollo Training</title>
 
-  </div>
+    <!-- Google Tag Manager -->
+    <script>
+      (function(w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-NC9DR9BQ');
+    </script>
+    <!-- End Google Tag Manager -->
+    <link rel="stylesheet" href="styles.css">
+  </head>
 
   <body>
     <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NC9DR9BQ"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-  <h1>Further</h1>
-  <div class="image">
-  <img src="Further.png" alt="Avatar">
-</div>
-<div class="summary">
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NC9DR9BQ" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
-  <p> Test Site for Apollo Training </p>
-</div>
-<div class="container">
-<div class="link">
-    <button class="btn btn-success" onclick=" window.open('https://www.instagram.com//','_blank')"> Instagram</button>
-</div>
-  <script>
-  // Ensure the dataLayer exists
-  window.dataLayer = window.dataLayer || [];
+    <div class="header"></div>
 
-  document.getElementById("instagramBtn").addEventListener("click", function () {
-    // Open Instagram in a new tab
-    window.open('https://www.instagram.com/', '_blank');
+    <h1>Further</h1>
+    <div class="image">
+      <img src="Further.png" alt="Avatar">
+    </div>
+    <div class="summary">
+      <p>Test Site for Apollo Train
 
-    // Clear the previous event data
-    dataLayer.push({ event_data: null });
-    dataLayer.push({ page_data: null });
-
-    // Push detailed event data
-    dataLayer.push({
-      "detailed_event": "Social Media Clicks",
-      "digitalData": {
-        "page": {
-          "link": {
-            "btn": {
-              "btn-success": "<btn-success>"
-            }
-          }
-        }
-      },
-      "event": "social_media_click",
-      "event_data": {
-        "link_url": "https://www.instagram.com/"
-      },
-      "page_data": {
-        "page_location": window.location.href
-      }
-    });
-
-    console.log('Event tracked and dataLayer updated.');
-  });
-</script>
-<div class="link">
-  <button class="btn btn-success" onclick=" window.open('https://www.twitch.tv/','_blank')"> Twitch</button>
-</div>
-<div class="link">
-  <button class="btn btn-success" onclick=" window.open('https://www.tiktok.com/','_blank')"> Tiktok</button>
-</div>
-  <div class="link">
-  <button class="btn btn-success" onclick=" window.open('https://www.youtube.com/','_blank')"> Youtube</button>
-</div>
-</div>
-<div class="footer">
-<img class="logo" src="Hittin'.png" alt="logo">
-</div>
-  </body>
-</html>
+ 
