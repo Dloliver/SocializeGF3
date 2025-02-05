@@ -4,45 +4,63 @@
     <script>
       // Initialize the dataLayer
       window.dataLayer = window.dataLayer || [];
+
+      // Push "Page Load Started" event
+      window.dataLayer.push({
+        "detailed_event": "Page Load Started",
+        "event": "page_load_start",
+        "page_data": {
+          "page_title": document.title,
+          "page_url": window.location.href
+        }
+      });
+      console.log("Page load start event tracked.");
+
+      // Attach a listener for "Page Load Completed"
+      function trackPageLoadCompleted() {
+        window.dataLayer.push({
+          "detailed_event": "Page Load Completed",
+          "event": "page_view",
+          "page_data": {
+            "page_title": document.title,
+            "page_url": window.location.href
+          }
+        });
+        console.log("Page load completed event tracked.");
+      }
+
+      if (document.readyState === 'complete') {
+        trackPageLoadCompleted();
+      } else {
+        window.addEventListener('load', trackPageLoadCompleted);
+      }
     </script>
     <meta charset="utf-8">
-    <title>Test Site for Apollo Training</title>
-
+    <title></title>
     <!-- Google Tag Manager -->
-    <script>
-      (function(w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
-        var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
-        j.async = true;
-        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-        f.parentNode.insertBefore(j, f);
-      })(window, document, 'script', 'dataLayer', 'GTM-NC9DR9BQ');
-    </script>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NC9DR9BQ');</script>
     <!-- End Google Tag Manager -->
-    <link rel="stylesheet" href="styles.css">
   </head>
-
+  <link rel="stylesheet" href="styles.css">
+  <div class="header">
+  </div>
   <body>
     <!-- Google Tag Manager (noscript) -->
-    <noscript>
-      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NC9DR9BQ" height="0" width="0" style="display:none;visibility:hidden"></iframe>
-    </noscript>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NC9DR9BQ"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
-
-    <div class="header"></div>
-
     <h1>Further</h1>
     <div class="image">
       <img src="Further.png" alt="Avatar">
     </div>
     <div class="summary">
-      <p>Test Site for Apollo Training</p>
+      <p> Test Site for Apollo Training </p>
     </div>
-
     <div class="container">
-      <!-- Social Media Buttons -->
       <div class="link">
         <button class="btn btn-success" data-url="https://www.instagram.com/">Instagram</button>
       </div>
@@ -56,50 +74,32 @@
         <button class="btn btn-success" data-url="https://www.youtube.com/">Youtube</button>
       </div>
     </div>
-
     <div class="footer">
       <img class="logo" src="Hittin'.png" alt="logo">
     </div>
-
     <script>
-  // Page Load Listener
-  window.addEventListener('load', function() {
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      "detailed_event": "Page Load Completed",
-      "event": "page_view",
-      "page_data": {
-        "page_title": document.title,
-        "page_url": window.location.href
-      }
-    });
-    console.log("Page load event tracked.");
-  });
+      // Click event listener for all social media buttons
+      document.querySelectorAll(".btn-success").forEach(function(button) {
+        button.addEventListener("click", function () {
+          const linkUrl = button.getAttribute("data-url");
 
-  // Click Listener for Buttons
-  document.querySelectorAll(".btn-success").forEach(function(button) {
-    button.addEventListener("click", function () {
-      const linkUrl = button.getAttribute("data-url");
+          // Open the link in a new tab
+          window.open(linkUrl, '_blank');
 
-      // Open the link in a new tab
-      window.open(linkUrl, '_blank');
-
-      // Push event data to the dataLayer
-      window.dataLayer.push({
-        detailed_event: "Social Media Clicks",
-        event: "social_media_click",
-        event_data: {
-          link_url: linkUrl
-        },
-        page_data: {
-          page_location: window.location.href
-        }
+          // Push event data to the dataLayer
+          window.dataLayer.push({
+            detailed_event: "Social Media Clicks",
+            event: "social_media_click",
+            event_data: {
+              link_url: linkUrl
+            },
+            page_data: {
+              page_location: window.location.href
+            }
+          });
+          console.log(`Event tracked for ${linkUrl}`);
+        });
       });
-      console.log(`Event tracked for ${linkUrl}`);
-    });
-  });
-</script>
-  
+    </script>
   </body>
 </html>
-
